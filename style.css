@@ -1,0 +1,941 @@
+/*===================================
+         GLOBAL RULES 
+====================================*/
+:root {
+    --main-text-color: #291C07;
+    --lightest-color: #f4dcd7;
+    --reddish: #e94926;
+    --blueish: #306aac;
+    --yellowish: #e7a41d;
+    --grayish: #5f5b54;
+    --overlay: rgba(41, 28, 7, 0.85);
+    --slight-marg: .5em;
+} 
+
+
+* {box-sizing:border-box;}
+
+body {
+    width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    background-color: var(--lightest-color)
+    
+}
+
+img {
+    width: 100%;
+    max-width: 1920px;
+}
+
+p, a {
+    font-family: Roboto, sans-serif;
+    font-weight: 300;
+    font-size: 0.8rem;
+    color: var(--main-text-color);
+    margin: 0 auto;
+}
+
+.header {
+    font-size: 1.3rem;
+    color: var(--main-text-color);
+    margin: 0 auto;
+    letter-spacing: 1.5px;
+}
+
+
+h2 {
+    font-size: 1rem;
+    color: var(--grayish);
+    margin: 0 auto;
+    letter-spacing: 1.5px;
+    font-size: 1.2em;
+}
+
+h3 {
+    font-size: 0.8rem;
+    color: var(--yellowish);
+    margin: 0 auto;
+    letter-spacing: 1.5px;
+    
+}
+
+h1, h2, h3 {font-family: Anton, sans-serif;}
+
+@media (min-width : 900px) {
+    .header {font-size:1.8rem;}
+    
+    h2 {font-size:1.4rem;}
+    
+    h3 {font-size:1rem;}
+    
+    p {font-size:0.8rem;}
+}
+
+/*@media (max-width : 600px){
+    p, h1, h2, h3 {
+        width: calc(100% - 1rem);
+    }
+}*/
+
+/*=====================================
+      Header and Navigation Bar
+=====================================*/
+
+/* Mobile first*/
+/* layout */
+
+.header-flex {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-item-1 {
+    width: 100%;
+    margin: 0 auto 0.1em;
+    order: 1;
+}
+
+.yamaha-logo {display:block;}
+
+.header-item-2 {
+    position: static;
+    margin-top: -16px;
+    width: 100%;
+    order: 4;
+}
+
+.header-item-4 {
+    position: static;
+    margin-top: -20px;
+    width: 100%;
+    max-width: 600px;
+    order: 3;
+    padding: 0.5em 0;
+}
+
+.header-item-3 {
+    display: block;
+    position: static;
+    margin-top: -16px;
+    order: 2;
+}
+
+.value-prop-flex {
+    display:flex;
+    align-items: center; 
+}
+
+.tenere-logo {
+    width: 30%;
+    max-width: 300px;
+}
+
+/* header-item's placement change according to <picture> */
+
+@media (min-width : 600px) and (max-width : 900px) {
+   
+    .header-item-3 {
+        margin-top: -16px;
+    }
+
+}
+
+
+
+/* <button> is displayed when screen sizes < 900px */
+
+@media (max-width : 899px) {
+      
+    .drop-btn {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 25px;
+        border: none;
+        background-color: var(--main-text-color);
+        color: var(--lightest-color);
+        font-size: 1.4em;
+        line-height: 0.7;
+    }
+    
+    .dropdown {
+        position: absolute;
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto;
+        z-index: 1;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        width: 100%;
+        height: 40px;
+        text-align: center;
+        top: 33px;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;      
+    }
+    
+    .dropdown li:hover {background-color:#224a77;}
+    
+    .dropdown:hover .drop-btn {color: var(--reddish);}
+}
+
+/* layout for wider screens */
+
+@media (min-width : 900px) {
+    
+    .nav-flex-item-2 {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .nav-flex li {
+        text-align: center;
+    }
+    
+    
+    .header-item-1{
+        order:1;
+        top: 0px; 
+        z-index: 3;
+    }
+    
+    
+    .header-item-2 {
+        margin-top: -8px;
+        top: 80px;
+        z-index: 3;
+        order: 2;
+    }
+    
+    .pos-fixed { 
+        position: fixed;
+    }
+    
+    .header-item-3 {
+        margin-top: 115px;
+        order: 3;
+    }
+    
+     .header-item-4 {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        position: absolute;
+        top: 230px;
+        left: 480px;
+        margin-left: 2em;
+        margin-right: 3em;
+        margin-top: 1.5em
+     }
+        
+/*    .header-item-4 {
+        top: 12px;
+    }*/
+     .value-prop-flex {
+         flex-direction: column;
+    }
+    
+    .tenere-logo {
+        display: block;
+        align-self: flex-start;
+        width: 150px;
+        margin-top: -1.5em;
+        margin-bottom: -2.1em;
+    }
+    
+    .drop-btn {display:none;}
+    
+    /*nav layout for wider screens */
+    
+    .navigation li {
+        border: none;
+        line-height: 1.05;
+    }
+    
+    .navigation ul {
+       margin: 0 auto;
+    }
+          
+}
+
+@media (min-width : 900px) and (max-width : 1100px) {
+    
+    .header-item-4 {
+        left: 380px;
+        margin-left: 6em;
+        margin-right: 3.5em;
+        margin-top: 1.5em; 
+        padding-left: 2em;
+    }
+}
+
+@media (min-width : 1100px) and (max-width : 1280px) {
+    .header-item-4 {
+        left: 600px;
+        margin-left: 4.5em;
+        margin-right: 1em;
+        margin-top: 1.5em; 
+        padding-left: 2em;
+    }
+}
+
+/*Placement of header-item-4 (h1 and p in header) on larger, and than largest screen sizes*/
+
+@media (min-width : 1280px) {
+    .header-item-4 {
+        width: 100%;
+        max-width: 400px;
+        position: absolute;
+        top: 400px;
+        left: 160px;
+    }
+    
+    .header-item-3 img {
+        width: 1920px;
+    }
+}
+
+
+@media (min-width : 1500px) {
+    .header-item-4 {
+        margin-left: 6.5em;
+        margin-top: 3em 
+    }
+    
+}
+
+/* Mobile First */
+/* Appearance */
+
+.header-background {
+    width:100%;
+    background-color: var(--main-text-color);
+    margin: 0;
+}
+
+.yamaha-logo {object-fit:contain;}
+
+/* navigation */
+
+.navigation ul {
+    list-style-type: none;  
+    padding: 0;
+    margin-bottom: -0.5em;
+    margin-top: -0.5em;     
+}
+
+.navigation li {
+    border-bottom: 1px solid rgba(244, 220, 215, .25);
+}
+
+.navigation li:last-child {border:none;}
+
+.navigation li a {
+    text-decoration: none;
+    color: var(--lightest-color);
+    font-family: Anton, sans-serif; 
+    font-size: 1.5rem; 
+    text-align: center; 
+}
+
+.navigation li a:hover {color:var(--yellowish);}
+
+.navigation li a:active {color:var(--yellowish);}
+
+@media (min-width : 900px) {
+     
+   .navigation li a {
+        font-size: 3rem;
+    }
+      
+}
+
+.header-item-2 li {
+    width: 100%;
+    background-color: var(--blueish)
+}
+
+.yamaha-logo {
+    height: 4rem;
+}
+
+.value-prop-head {
+    letter-spacing: 2px;
+}
+
+.value-prop-text {
+    text-align: left;
+    font-style: italic;
+}
+
+@media (min-width : 900px) and (max-width : 1280px)  {
+    
+    .value-prop-text {
+        font-weight: 600;
+        color: var(--lightest-color);
+    }
+}
+
+h1 .color-text {color: var(--yellowish);}
+
+@media (min-width : 1280px) {
+    
+    .value-prop-flex {flex-direction: column;}
+    
+    .tenere-logo {align-self:flex-start;}
+    
+    h1 .color-text {color: var(--reddish);}
+    
+    .tenere-logo {
+        display: block;
+        width: 180px;
+        margin-top: -1.5em;
+        margin-bottom: -2.1em;
+    }
+    
+    .value-prop-head { font-size: 2rem; }
+    
+    .value-prop-text { font-size: 1.1rem; }
+}
+
+/*=============================================
+      MAIN BEGINS FEATURES AND BENEFITS
+==============================================*/
+
+/* lAYOUT AND IMG DIMENSIONS
+*/
+
+.benefits-and-features {
+    margin: 2em auto;
+}
+
+.feature-img {
+    display: block;
+    width: 100%;
+    max-width: 125px;
+    height: 125px;
+    object-fit: cover; 
+    border-radius: 50%;
+    margin: 0.6em 0;
+    /*margin: auto;*/
+}
+
+
+.feature-detail {
+    width: 400px;
+    margin-top: .5em;
+}
+
+[class|="grid-item"] {
+    max-width: 600px;
+}
+
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    justify-items: center;
+}
+
+.feature-wrapper {display:grid;}
+
+.detail-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    justify-items: center;
+}
+
+.three {
+    width: 66%;
+    max-width: 300px;
+}
+
+.three-reversed {
+    width: 66%;
+}
+
+
+/* layout for larger screens
+*/
+
+@media (min-width : 900px) {
+    
+  
+    .feature-wrapper {display:block;}
+    
+    .one { 
+        grid-column: 5/10;
+        grid-row: 1/2;
+        width: 100%;
+        place-self: end;
+    }
+    
+    .two { 
+        grid-column: 1/5;
+        grid-row: 1/4;
+    }
+    
+    .three {
+        grid-column: 5/10;
+        grid-row: 2/4;
+        width: 100%;
+    }
+    
+    .one-reversed {
+        grid-column: 1/5;
+        grid-row: 1/2;
+        width: 100%;
+        place-self: end;
+    }
+    
+    .two-reversed { 
+        grid-column: 5/10;
+        grid-row: 1/4;
+        margin-left: 2.5em;
+    }
+    
+    .three-reversed {
+        grid-column: 1/5;
+        grid-row: 2/4;
+        width: 100%;
+        
+    }
+    
+    .detail-wrapper {
+        grid-template-columns: repeat(9, 1fr);
+    }
+    
+     .container {
+        grid-template-columns: repeat(9, 1fr);
+        grid-template-rows: repeat(3, auto);
+        grid-gap: 10px;
+        max-width: 785px;
+    }
+    
+    .feature { height:100%; }
+    
+    .grid-item-1 {
+        grid-column: 1/10;
+        grid-row: 1/2;   
+    } 
+    
+    .grid-item-2 {
+        grid-column: 1/5;
+        grid-row: 2/3;
+    }
+    
+    .grid-item-3 {
+        grid-column: 6/10;
+        grid-row: 2/3;
+    }
+    
+    .grid-item-4 {
+        grid-column: 1/5;
+        grid-row: 3/4;
+    }
+    
+    .grid-item-5 {
+        grid-column: 6/10;
+        grid-row: 3/4;
+    }
+   
+}
+
+/*Layout for largest screen size =<
+ 1920*/
+
+@media (min-width : 1620px) {
+     .container {
+        max-width: 1620px;
+        grid-template-columns: repeat(10, auto);
+        grid-template-rows: repeat(2, auto);
+        grid-gap: 10px;
+        justify-content: center;
+    }
+    
+    .grid-item-2 { 
+        grid-column: 1/3;
+        grid-row: 2/3;
+    } 
+    
+    .grid-item-3 { 
+        grid-column: 3/5; 
+        grid-row: 2/3;
+    }
+    
+    .grid-item-4 { 
+        grid-column: 5/7;
+        grid-row: 2/3;
+    }
+    
+    .grid-item-5 { 
+        grid-column: 7/9;
+        grid-row: 2/3;
+    }
+}
+/* appearance
+*/
+.features-benefits-head { text-align: center; }
+
+.features-benefits-subhead { text-align: center; }
+
+.feature-text {
+    text-align: justify;
+    padding-bottom: 1em;
+}
+
+ .feature-head {
+        font-size: 1rem;
+        color: var(--yellowish);
+    }
+
+.feature-detail-head {
+        max-width: 500px;
+        color: var(--blueish);
+}
+
+@media (min-width : 900px) {
+    
+    .feature {
+        background-color: rgba(48, 106, 172, 0.2) ;
+        border-radius: 10px;
+        padding: 1em;
+    }
+   .feature-head {
+       font-size: 1.4rem;
+       color: var(--reddish);
+    }
+
+    .feature-detail-head {
+        max-width: 500px;
+        color: var(--blueish);
+        font-size: 0.8rem;
+    }
+    
+    .feature-text { 
+        text-align: left;
+        font-weight: 400;
+        width:100%;
+    }
+}
+
+/*=============================================
+            Contact   Section    
+================================================*/
+
+/* Layout and background
+*/
+
+.contact-section {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    margin: 0;
+    z-index: 99;
+    
+}
+
+.bg-image {
+    position: relative;
+    background: #291C07 url("img/yamaha_tenere_bg-img_small.jpg") no-repeat 50% 30%;
+    z-index: -2;
+}
+
+.overlay {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 250px;
+    background-color: var(--overlay);
+    z-index: -1;
+}
+
+
+.call-to-action-head, .call-to-action-text, .form {
+    text-align: center;
+    margin:  auto;
+    z-index: 1;
+}
+
+.form { 
+    margin-top: 1.5em;
+    z-index: 99;
+}
+/* background image change for wider screens
+*/
+
+@media (min-width : 900px) {
+    
+    .bg-image {
+        position: relative;
+        background: #291C07 url("img/yamaha_tenere_bg-img_big.jpg") no-repeat 50% 60%;
+        z-index: -2;
+    }
+    
+}
+
+.call-to-action { 
+    position: relative;
+    top: 50px;
+    width: 80%;
+    max-width: 800px;
+    margin: auto;
+}
+
+.margin-top {margin-top: 3.125em;}
+
+.email {
+    display: inline-block;
+    width: 300px;
+    height: 32px;
+    border: none;
+    margin-right: 0;
+    padding: .5em;
+    
+}
+
+.button {
+    width: 300px;
+    margin: auto;
+    display:block;
+    border: none; 
+    height: 32px;
+    padding: .5em;
+}
+
+.form {
+    margin-left: 4px;
+    z-index: 2;
+}
+/* Appearance
+*/
+.call-to-action-head {
+    color: var(--yellowish);
+    letter-spacing: 1.5px;
+}
+
+.call-to-action-text {
+    color: var(--lightest-color);
+    font-family: Anton, sans-serif;
+    letter-spacing: 1px;
+}
+
+.button {
+    background-color: var(--blueish);
+    color: var(--lightest-color);
+    font-family: roboto, monospace;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    line-height: 0.8;
+    font-weight: 700;
+    border-radius: 0 0 15px 15px;
+}
+
+.email {
+    background-color: GhostWhite;
+    border-radius: 15px 15px 0 0;
+    font-family: roboto, monospace;
+    text-align: center;
+}
+
+/*==================================================
+                VIDEO SECTION
+====================================================*/
+
+.gallery-section {
+    padding: 1em;
+    background-color: var(--reddish);
+
+}
+
+.video {
+    top: 2em;
+    display: block;
+    max-width: 800px;
+    width:80%;
+    margin: auto;
+    border-radius: 10px;
+}
+
+/*==================================================
+                Accessories Section
+=====================================================*/
+
+.item-img {
+    position: relative;
+    width: 166px;
+    border-radius: 50%;
+}
+
+.item-text {
+    position: relative;
+    top: -16px;
+    text-align: center;
+}
+
+[class*="item-"] { margin-bottom: 1em; }
+
+.acc-container {
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-gap: 5px;
+    justify-items: center;
+    max-width: 800px;
+}
+
+@media (min-width : 900px) {
+  
+    .acc-container {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        margin: auto;
+    }
+    
+    
+}
+
+.acc-head { text-align: center; margin-bottom: 1em; }
+
+.accessories-box h1 { margin-bottom: 0.25em; }
+
+
+@media (min-width : 900px) {
+    
+    .featured-acc {
+     background-color: rgba(48, 106, 172, 0.2) ;
+        border-radius: 10px;
+        padding: .5em;
+    }
+    
+}
+
+
+.item-text {
+    max-width: 500px;
+    color: var(--blueish);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    font-family: Anton, sans-serif;
+}
+
+
+/*==================================================
+                FOOTER 
+=====================================================*/
+
+.footer {
+    position: relative;
+    background: var(--main-text-color) url("img/yamaha-tenere-footer-bg-image700.jpg") 75% 85% no-repeat;
+    margin-bottom: 0;
+    height: 300px;
+}
+
+@media (min-width : 900px) {
+    
+    .footer { 
+        margin-top: 2em;
+    }
+}
+
+.footer-content {
+    position: absolute;
+    top: -10px;
+    z-index: 2;
+    width: 100%;
+    height: 300px ;
+}
+
+.footer-overlay {
+    position: absolute;
+    top: 0px;
+    background-color: var(--overlay);
+    width: 100%;
+    height: 300px;
+    z-index: 1;   
+}
+
+.footer-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center
+}
+
+
+.nav-bottom-list {
+    width: 500px;
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+    padding: 0;
+}
+
+.nav-bottom li {
+    padding-right: 2.1em;
+    padding-left: 1.05em;
+    border-right: 1px solid var(--blueish);
+}
+
+.nav-bottom li:last-child {
+    border-right: none;
+    padding: 0;
+}
+
+.nav-bottom li {
+    text-decoration: none;
+    font-weight: 300;
+    font-family: Roboto, sans-serif;
+    letter-spacing: 1.5px;
+}
+
+
+.sm_link { display: inline-block; } 
+
+.footer-content {  text-align: center; }
+
+.footer-content a {
+    text-decoration: none;
+    color: var(--lightest-color) ;
+}
+
+
+.footer-head { color: var(--yellowish); }
+
+.sm_head { 
+    font-size: 1.5rem;
+    color: var(--lightest-color);
+}
+
+.sm_link { 
+    font-size: 1.5rem;
+    padding: .5em;
+}
+
+.nav-bottom a { 
+    font-size: 1.5rem;
+    color: var(--blueish);
+}
+
+.nav-bottom a:hover { color: var(--yellowish);}
+
+.attribution-section .attribution { color: var(--grayish); }
+
+.signature {
+    margin-top: .25em;
+    color: var(--grayish);
+}
