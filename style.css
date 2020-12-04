@@ -6,6 +6,7 @@
     --lightest-color: #f4dcd7;
     --reddish: #e94926;
     --blueish: #306aac;
+    --blishdark: #224a77;
     --yellowish: #e7a41d;
     --grayish: #5f5b54;
     --overlay: rgba(41, 28, 7, 0.85);
@@ -184,9 +185,14 @@ h1, h2, h3 {font-family: Anton, sans-serif;}
         display: block;      
     }
     
-    .dropdown li:hover {background-color:#224a77;}
+    .dropdown li:hover {
+        background-color: var(--blishdark);
+    }
     
-    .dropdown:hover .drop-btn {color: var(--reddish);}
+    .dropdown:hover .drop-btn {
+        color: var(--reddish);
+    }
+    
 }
 
 /* layout for wider screens */
@@ -695,7 +701,9 @@ h1 .color-text {color: var(--yellowish);}
     margin: auto;
 }
 
-.margin-top {margin-top: 3.125em;}
+.margin-top {
+    margin-top: 3.125em;
+}
 
 .email {
     width: 300px;
@@ -740,8 +748,26 @@ h1 .color-text {color: var(--yellowish);}
     background-color: GhostWhite;
     border-radius: 15px 15px 0 0;
     font-family: roboto, monospace;
+    font-size: 1rem;
+    color: 	hsl(44, 100%, 10%);
     font-weight: bolder;
     text-align: center;
+    transition: background 1s ease .1s;
+    -webkit-transition: background 1s ease .1s;
+    -mox-transition: background 1s ease .1s; 
+}
+
+.email:focus {
+    background: #ffdd80;
+}
+
+.email:focus, button:focus {
+    outline: none;
+}
+
+
+.email:focus-visble, button:focus-visible {
+    outline: 2px solid invert;
 }
 
 .button {
@@ -753,6 +779,14 @@ h1 .color-text {color: var(--yellowish);}
     line-height: 0.8;
     font-weight: 700;
     border-radius: 0 0 15px 15px;
+    transition: background 1s ease .1s;
+    -webkit-transition: background 1s ease .1s;
+    -mox-transition: background 1s ease .1s;
+}
+
+.button:hover {
+    background: var(--blishdark);
+    color: ghostwhite; 
 }
 
 
