@@ -6,6 +6,7 @@
     --lightest-color: #f4dcd7;
     --reddish: #e94926;
     --blueish: #306aac;
+    --blishdark: #224a77;
     --yellowish: #e7a41d;
     --grayish: #5f5b54;
     --overlay: rgba(41, 28, 7, 0.85);
@@ -184,9 +185,14 @@ h1, h2, h3 {font-family: Anton, sans-serif;}
         display: block;      
     }
     
-    .dropdown li:hover {background-color:#224a77;}
+    .dropdown li:hover {
+        background-color: var(--blishdark);
+    }
     
-    .dropdown:hover .drop-btn {color: var(--reddish);}
+    .dropdown:hover .drop-btn {
+        color: var(--reddish);
+    }
+    
 }
 
 /* layout for wider screens */
@@ -206,14 +212,14 @@ h1, h2, h3 {font-family: Anton, sans-serif;}
     .header-item-1{
         order:1;
         top: 0px; 
-        z-index: 3;
+        z-index: 4;
     }
     
     
     .header-item-2 {
         margin-top: -8px;
         top: 80px;
-        z-index: 3;
+        z-index: 4;
         order: 2;
     }
     
@@ -645,14 +651,16 @@ h1 .color-text {color: var(--yellowish);}
     width: 100%;
     height: 250px;
     margin: 0;
-    z-index: 99;
-    
 }
 
+.call-to-action-head, .call-to-action-text {
+    position: relative;
+    z-index: 3
+}
 .bg-image {
     position: relative;
     background: #291C07 url("img/yamaha_tenere_bg-img_small.jpg") no-repeat 50% 30%;
-    z-index: -2;
+    z-index: 1;
 }
 
 .overlay {
@@ -661,19 +669,17 @@ h1 .color-text {color: var(--yellowish);}
     width: 100%;
     height: 250px;
     background-color: var(--overlay);
-    z-index: -1;
+    z-index: 2;
 }
 
 
 .call-to-action-head, .call-to-action-text, .form {
     text-align: center;
-    margin:  auto;
-    z-index: 1;
+    margin:  auto;   
 }
 
 .form { 
     margin-top: 1.5em;
-    z-index: 99;
 }
 /* background image change for wider screens
 */
@@ -683,7 +689,6 @@ h1 .color-text {color: var(--yellowish);}
     .bg-image {
         position: relative;
         background: #291C07 url("img/yamaha_tenere_bg-img_big.jpg") no-repeat 50% 60%;
-        z-index: -2;
     }
     
 }
@@ -696,10 +701,11 @@ h1 .color-text {color: var(--yellowish);}
     margin: auto;
 }
 
-.margin-top {margin-top: 3.125em;}
+.margin-top {
+    margin-top: 3.125em;
+}
 
 .email {
-    display: inline-block;
     width: 300px;
     height: 32px;
     border: none;
@@ -719,7 +725,11 @@ h1 .color-text {color: var(--yellowish);}
 
 .form {
     margin-left: 4px;
-    z-index: 2;
+}
+
+.email, .button {
+    position: relative;
+    z-index: 3;
 }
 /* Appearance
 */
@@ -734,6 +744,32 @@ h1 .color-text {color: var(--yellowish);}
     letter-spacing: 1px;
 }
 
+.email {
+    background-color: GhostWhite;
+    border-radius: 15px 15px 0 0;
+    font-family: roboto, monospace;
+    font-size: 1rem;
+    color: 	hsl(44, 100%, 10%);
+    font-weight: bolder;
+    text-align: center;
+    transition: background 1s ease .1s;
+    -webkit-transition: background 1s ease .1s;
+    -mox-transition: background 1s ease .1s; 
+}
+
+.email:focus {
+    background: #ffdd80;
+}
+
+.email:focus, button:focus {
+    outline: none;
+}
+
+
+.email:focus-visble, button:focus-visible {
+    outline: 2px solid invert;
+}
+
 .button {
     background-color: var(--blueish);
     color: var(--lightest-color);
@@ -743,14 +779,17 @@ h1 .color-text {color: var(--yellowish);}
     line-height: 0.8;
     font-weight: 700;
     border-radius: 0 0 15px 15px;
+    transition: background 1s ease .1s;
+    -webkit-transition: background 1s ease .1s;
+    -mox-transition: background 1s ease .1s;
 }
 
-.email {
-    background-color: GhostWhite;
-    border-radius: 15px 15px 0 0;
-    font-family: roboto, monospace;
-    text-align: center;
+.button:hover {
+    background: var(--blishdark);
+    color: ghostwhite; 
 }
+
+
 
 /*==================================================
                 VIDEO SECTION
