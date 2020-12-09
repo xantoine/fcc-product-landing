@@ -7,6 +7,7 @@
     --reddish: #e94926;
     --blueish: #306aac;
     --blishdark: #224a77;
+    --blishlight: rgba(48, 106, 172, 0.2);
     --yellowish: #e7a41d;
     --grayish: #5f5b54;
     --overlay: rgba(41, 28, 7, 0.85);
@@ -18,10 +19,11 @@
 
 body {
     width: 100%;
+    height: 100vh;
     overflow-x: hidden;
     margin: 0;
+    margin-bottom: -10px;
     background-color: var(--lightest-color)
-    
 }
 
 img {
@@ -38,7 +40,7 @@ p, a {
 }
 
 .header {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     color: var(--main-text-color);
     margin: 0 auto;
     letter-spacing: 1.5px;
@@ -46,7 +48,7 @@ p, a {
 
 
 h2 {
-    font-size: 1rem;
+    font-size: 1.4rem;
     color: var(--grayish);
     margin: 0 auto;
     letter-spacing: 1.5px;
@@ -64,20 +66,25 @@ h3 {
 h1, h2, h3 {font-family: Anton, sans-serif;}
 
 @media (min-width : 900px) {
-    .header {font-size:1.8rem;}
     
-    h2 {font-size:1.4rem;}
+    .header {
+        font-size: 1.8rem;
+    }
     
-    h3 {font-size:1rem;}
+    h2 {
+        font-size: 1.4rem;
+    }
     
-    p {font-size:0.8rem;}
+    h3 {
+        font-size: 1rem;
+    }
+    
+    p {
+        font-size: 0.8rem;
+    }
+    
 }
 
-/*@media (max-width : 600px){
-    p, h1, h2, h3 {
-        width: calc(100% - 1rem);
-    }
-}*/
 
 /*=====================================
       Header and Navigation Bar
@@ -228,7 +235,7 @@ h1, h2, h3 {font-family: Anton, sans-serif;}
     }
     
     .header-item-3 {
-        margin-top: 115px;
+        margin-top: 114px;
         order: 3;
     }
     
@@ -265,7 +272,7 @@ h1, h2, h3 {font-family: Anton, sans-serif;}
     
     .navigation li {
         border: none;
-        line-height: 1.05;
+        line-height: 1.1;
     }
     
     .navigation ul {
@@ -329,7 +336,9 @@ h1, h2, h3 {font-family: Anton, sans-serif;}
     margin: 0;
 }
 
-.yamaha-logo {object-fit:contain;}
+.yamaha-logo {
+    object-fit: contain;
+}
 
 /* navigation */
 
@@ -344,22 +353,38 @@ h1, h2, h3 {font-family: Anton, sans-serif;}
     border-bottom: 1px solid rgba(244, 220, 215, .25);
 }
 
-.navigation li:last-child {border:none;}
+.navigation li:last-child { 
+    border: none;
+}
+
+/* appearence */
 
 .navigation li a {
     text-decoration: none;
     color: var(--lightest-color);
+    transition: color .5s ease 0.1s;
+    -webkit-transition: color .5s ease 0.1s;
+    -moz-transition: color .5s ease 0.1s;
     font-family: Anton, sans-serif; 
     font-size: 1.5rem; 
     text-align: center; 
 }
 
-.navigation li a:hover {color:var(--yellowish);}
+.navigation li a:hover {
+    color: var(--yellowish);
+}
 
-.navigation li a:active {color:var(--yellowish);}
+.navigation li a:active {
+    color: var(--yellowish);
+}
 
 @media (min-width : 900px) {
-     
+   
+    .navigation li {
+        padding-top: 2px;
+        border-bottom: none;
+    }
+    
    .navigation li a {
         font-size: 3rem;
     }
@@ -392,15 +417,23 @@ h1, h2, h3 {font-family: Anton, sans-serif;}
     }
 }
 
-h1 .color-text {color: var(--yellowish);}
+h1 .color-text {
+    color: var(--yellowish);
+}
 
 @media (min-width : 1280px) {
     
-    .value-prop-flex {flex-direction: column;}
+    .value-prop-flex {
+        flex-direction: column;
+    }
     
-    .tenere-logo {align-self:flex-start;}
+    .tenere-logo {
+        align-self:flex-start;
+    }
     
-    h1 .color-text {color: var(--reddish);}
+    h1 .color-text {
+        color: var(--reddish);
+    }
     
     .tenere-logo {
         display: block;
@@ -409,9 +442,14 @@ h1 .color-text {color: var(--yellowish);}
         margin-bottom: -2.1em;
     }
     
-    .value-prop-head { font-size: 2rem; }
+    .value-prop-head { 
+        font-size: 2rem; 
+    }
     
-    .value-prop-text { font-size: 1.1rem; }
+    .value-prop-text { 
+        font-size: 1.1rem; 
+    }
+    
 }
 
 /*=============================================
@@ -422,7 +460,7 @@ h1 .color-text {color: var(--yellowish);}
 */
 
 .benefits-and-features {
-    margin: 2em auto;
+    margin: 2em auto -3.15em auto;
 }
 
 .feature-img {
@@ -436,6 +474,9 @@ h1 .color-text {color: var(--yellowish);}
     /*margin: auto;*/
 }
 
+.grid-item-5 .two-reversed {
+    object-position: -35px 50%;
+}
 
 .feature-detail {
     width: 400px;
@@ -456,7 +497,9 @@ h1 .color-text {color: var(--yellowish);}
     justify-items: center;
 }
 
-.feature-wrapper {display:grid;}
+.feature-wrapper {
+    display: grid;
+}
 
 .detail-wrapper {
     display: grid;
@@ -474,14 +517,18 @@ h1 .color-text {color: var(--yellowish);}
     width: 66%;
 }
 
-
 /* layout for larger screens
 */
 
 @media (min-width : 900px) {
     
-  
-    .feature-wrapper {display:block;}
+    .benefits-and-features {
+        margin: 0 auto -1em auto;
+    }
+    
+    .feature-wrapper {
+        display: block;
+    }
     
     .one { 
         grid-column: 5/10;
@@ -562,9 +609,11 @@ h1 .color-text {color: var(--yellowish);}
 }
 
 /*Layout for largest screen size =<
- 1920*/
+ 1620
+*/
 
 @media (min-width : 1620px) {
+    
      .container {
         max-width: 1620px;
         grid-template-columns: repeat(10, auto);
@@ -593,11 +642,16 @@ h1 .color-text {color: var(--yellowish);}
         grid-row: 2/3;
     }
 }
-/* appearance
-*/
-.features-benefits-head { text-align: center; }
 
-.features-benefits-subhead { text-align: center; }
+/* appearance */
+
+.features-benefits-head { 
+    text-align: center;
+}
+
+.features-benefits-subhead { 
+    text-align: center; 
+}
 
 .feature-text {
     text-align: justify;
@@ -605,22 +659,23 @@ h1 .color-text {color: var(--yellowish);}
 }
 
  .feature-head {
-        font-size: 1rem;
-        color: var(--yellowish);
-    }
+    font-size: 1rem;
+    color: var(--yellowish);
+}
 
 .feature-detail-head {
-        max-width: 500px;
-        color: var(--blueish);
+    max-width: 500px;
+    color: var(--blueish);
 }
 
 @media (min-width : 900px) {
     
     .feature {
-        background-color: rgba(48, 106, 172, 0.2) ;
+        background-color: var(--blishlight) ;
         border-radius: 10px;
         padding: 1em;
     }
+    
    .feature-head {
        font-size: 1.4rem;
        color: var(--reddish);
@@ -657,6 +712,7 @@ h1 .color-text {color: var(--yellowish);}
     position: relative;
     z-index: 3
 }
+
 .bg-image {
     position: relative;
     background: #291C07 url("img/yamaha_tenere_bg-img_small.jpg") no-repeat 50% 30%;
@@ -681,6 +737,7 @@ h1 .color-text {color: var(--yellowish);}
 .form { 
     margin-top: 1.5em;
 }
+
 /* background image change for wider screens
 */
 
@@ -731,6 +788,7 @@ h1 .color-text {color: var(--yellowish);}
     position: relative;
     z-index: 3;
 }
+
 /* Appearance
 */
 .call-to-action-head {
@@ -781,7 +839,8 @@ h1 .color-text {color: var(--yellowish);}
     border-radius: 0 0 15px 15px;
     transition: background 1s ease .1s;
     -webkit-transition: background 1s ease .1s;
-    -mox-transition: background 1s ease .1s;
+    -moz-transition: background 1s ease .1s;
+    cursor: pointer;
 }
 
 .button:hover {
@@ -796,13 +855,12 @@ h1 .color-text {color: var(--yellowish);}
 ====================================================*/
 
 .gallery-section {
-    padding: 1em;
+    padding: 2em 1em;
     background-color: var(--reddish);
 
 }
 
 .video {
-    top: 2em;
     display: block;
     max-width: 800px;
     width:80%;
@@ -813,6 +871,14 @@ h1 .color-text {color: var(--yellowish);}
 /*==================================================
                 Accessories Section
 =====================================================*/
+
+.accessories-box {
+    margin-top: 2em;
+}
+
+.accessories-box h1 {
+    line-height: 0.9;
+}
 
 .item-img {
     position: relative;
@@ -826,7 +892,9 @@ h1 .color-text {color: var(--yellowish);}
     text-align: center;
 }
 
-[class*="item-"] { margin-bottom: 1em; }
+[class*="item-"] { 
+    margin-bottom: 1em;
+}
 
 .acc-container {
     display:grid;
@@ -843,19 +911,23 @@ h1 .color-text {color: var(--yellowish);}
         grid-template-rows: repeat(2, 1fr);
         margin: auto;
     }
-    
-    
+      
 }
 
-.acc-head { text-align: center; margin-bottom: 1em; }
+.acc-head {
+    text-align: center;
+    margin-bottom: 1em;
+}
 
-.accessories-box h1 { margin-bottom: 0.25em; }
+.accessories-box h1 {
+    margin-bottom: 0.25em;
+}
 
 
 @media (min-width : 900px) {
     
     .featured-acc {
-     background-color: rgba(48, 106, 172, 0.2) ;
+        background-color: var(--blishlight);
         border-radius: 10px;
         padding: .5em;
     }
@@ -880,7 +952,7 @@ h1 .color-text {color: var(--yellowish);}
 .footer {
     position: relative;
     background: var(--main-text-color) url("img/yamaha-tenere-footer-bg-image700.jpg") 75% 85% no-repeat;
-    margin-bottom: 0;
+    margin-bottom: -0.01em;
     height: 300px;
 }
 
@@ -896,7 +968,7 @@ h1 .color-text {color: var(--yellowish);}
     top: -10px;
     z-index: 2;
     width: 100%;
-    height: 300px ;
+    height: 100%;
 }
 
 .footer-overlay {
@@ -935,6 +1007,8 @@ h1 .color-text {color: var(--yellowish);}
     padding: 0;
 }
 
+/* appearance */
+
 .nav-bottom li {
     text-decoration: none;
     font-weight: 300;
@@ -943,17 +1017,27 @@ h1 .color-text {color: var(--yellowish);}
 }
 
 
-.sm_link { display: inline-block; } 
+.sm_link { 
+    display: inline-block;
+} 
 
-.footer-content {  text-align: center; }
+.footer-content {  
+    text-align: center;
+}
 
 .footer-content a {
     text-decoration: none;
-    color: var(--lightest-color) ;
+    color: var(--lightest-color);
+    transition: color .5s ease 0.1s;
+    -webkit-transition: color .5s ease 0.1s;
+    -moz-transition: color .5s ease 0.1s;
 }
 
-
-.footer-head { color: var(--yellowish); }
+.footer-head { 
+    position: relative;
+    top: 4px;
+    color: var(--yellowish);
+}
 
 .sm_head { 
     font-size: 1.5rem;
@@ -961,18 +1045,49 @@ h1 .color-text {color: var(--yellowish);}
 }
 
 .sm_link { 
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     padding: .5em;
 }
+
+
+
+.yt:hover {
+    color: var(--reddish);
+}
+
+.footer-content .ig {
+    color: var(--lightest-color);
+    transition: color .5s ease 0.1s;
+    -webkit-transition: color .5s ease 0.1s;
+    -moz-transition: color .5s ease 0.1s;
+    
+}
+
+.footer-content .ig:hover {
+    color: #C13584; 
+}
+
+.fb:hover {
+    color: var(--blueish);
+}
+
+.tw:hover {
+    color: #66ccff;
+}
+
 
 .nav-bottom a { 
     font-size: 1.5rem;
     color: var(--blueish);
 }
 
-.nav-bottom a:hover { color: var(--yellowish);}
+.nav-bottom a:hover { 
+    color: var(--yellowish);
+}
 
-.attribution-section .attribution { color: var(--grayish); }
+.attribution-section .attribution { 
+    color: var(--grayish);
+}
 
 .signature {
     margin-top: .25em;
